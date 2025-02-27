@@ -20,37 +20,36 @@ const UseCallbackComp = () => {
 
   return (
     <section>
-    <h1 id="heading">Manage Skills</h1>
-    <div>
-      <input
-        id="skill-input"
-        type="text"
-        value={skill}
-        onChange={(e) => setSkill(e.target.value)}
-        placeholder="Enter skill"
-      />
-      <button id="skill-add-btn" onClick={addSkill}>Add Skill</button>
-    </div>
-    <SkillList skills={skills} removeSkill={removeSkill} />
-  </section>
+      <h1 id="heading">Manage Skills</h1>
+      <div>
+        <input
+          id="skill-input"
+          type="text"
+          value={skill}
+          onChange={(e) => setSkill(e.target.value)}
+          placeholder="Enter skill"
+        />
+        <button id="skill-add-btn" onClick={addSkill}>Add Skill</button>
+      </div>
+      <SkillList skills={skills} removeSkill={removeSkill} />
+    </section>
   );
 };
 
 
 const SkillList = ({ skills, removeSkill  }) => {
   return (
-    <ul>
-      {skills.map((skill, idx) => (
-        <li
-          key={idx}
-          id={`skill-number-${idx}`}
-          onClick={() => removeSkill(skill)}
-        >
+    <ul id="skill-list">
+    {skills.length > 0 ? (
+      skills.map((skill, idx) => (
+        <li key={idx} id={`skill-number-${idx}`} onClick={() => removeSkill(skill)}>
           {skill}
         </li>
-      ))}
-
-    </ul>
+      ))
+    ) : (
+      <li id="empty-skill">No skills available</li> // Ensure ul always has content
+    )}
+  </ul>
   )
 }
 
