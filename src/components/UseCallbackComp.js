@@ -2,9 +2,8 @@ import React, { useCallback, useState } from 'react'
 
 const UseCallbackComp = () => {
 
-  const [skills, setSkills] = useState(["HTML", "CSS", "Javascript", "React"]);
+  const [skills, setSkills] = useState(["HTML", "CSS", "JavaScript", "React"]);
   const [skill, setSkill] = useState("");
-
 
   const addSkill = useCallback(() => {
     if (skill.trim() !== "" && !skills.includes(skill)) {
