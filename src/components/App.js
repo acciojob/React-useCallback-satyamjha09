@@ -4,7 +4,6 @@ import UseCallbackComp from './UseCallbackComp'
 const App = () => {
   return (
     <div>
-        sad
         <UseCallbackComp />
     </div>
   )
